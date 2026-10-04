@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Convert microwave cooking instructions into a practical air fryer starting point using food type, food state, and desired result. Includes Fahrenheit and Celsius." />
+<meta name="theme-color" content="#f97316" />
+<meta property="og:title" content="Microwave to Air Fryer Converter" />
+<meta property="og:description" content="Turn microwave instructions into a practical air fryer starting range." />
+<meta property="og:type" content="website" />
+<title>Microwave to Air Fryer Converter | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">⚡ MICROWAVE → AIR FRYER</span>
+    <h1>Microwave to Air Fryer Converter</h1>
+    <p>Microwaves and air fryers cook in very different ways, so there is no reliable one-number formula. This tool uses the microwave time plus the type of food to give you a safer, more useful air fryer starting range.</p>
+  </div>
+</section>
+
+<section style="padding-top:34px">
+  <div class="container hero-grid">
+    <div class="converter">
+      <h2>Convert microwave instructions</h2>
+      <div class="sub">Tell us what you're cooking and how long the microwave instructions say.</div>
+
+      <div class="field-grid">
+        <div>
+          <label for="mwMinutes">Microwave minutes</label>
+          <input id="mwMinutes" type="number" value="3" min="0" />
+        </div>
+        <div>
+          <label for="mwSeconds">Extra seconds</label>
+          <input id="mwSeconds" type="number" value="0" min="0" max="59" />
+        </div>
+        <div>
+          <label for="foodType">Food type</label>
+          <select id="foodType">
+            <option value="nuggets">Chicken nuggets / bites</option>
+            <option value="fries">Fries / potato sides</option>
+            <option value="pizza">Pizza / flatbread</option>
+            <option value="leftovers">Leftovers / reheating</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="chicken">Chicken pieces</option>
+            <option value="fish">Fish / seafood</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="foodState">Starting state</label>
+          <select id="foodState">
+            <option value="frozen">Frozen</option>
+            <option value="refrigerated">Refrigerated</option>
+            <option value="room">Room temperature</option>
+          </select>
+        </div>
+        <div>
+          <label for="desiredResult">Main goal</label>
+          <select id="desiredResult">
+            <option value="crisp">Heat + crisp</option>
+            <option value="cook">Cook through</option>
+            <option value="reheat">Reheat only</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary convert-btn" id="microwaveConvertBtn">Get Air Fryer Starting Point</button>
+
+      <div class="result" id="mwResult" aria-live="polite">
+        <strong>Suggested starting point</strong>
+        <div class="big" id="mwResultMain"></div>
+        <div id="mwResultNote"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h2>Why this isn't a simple formula</h2>
+      <p>A microwave primarily heats food by exciting water molecules, while an air fryer uses rapidly circulating hot air. That means microwave minutes cannot be converted directly into air-fryer minutes with a single multiplier.</p>
+      <p style="margin-top:14px">For the best result, use the converter as a starting range, then check food early and adjust for your specific air fryer.</p>
+      <a class="btn btn-secondary" href="/microwave-to-air-fryer-conversion-chart/" style="margin-top:14px">See the conversion chart</a>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <div class="section-head">
+      <h2>Common examples</h2>
+      <p>These are practical starting points for foods that often have microwave directions on the package.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="icon">🍟</div><h3>Frozen fries</h3><p><span data-f="390°F" data-c="200°C">390°F</span>, usually 12–18 minutes. Shake halfway.</p></div>
+      <div class="card"><div class="icon">🍗</div><h3>Frozen nuggets</h3><p><span data-f="390°F" data-c="200°C">390°F</span>, usually 6–10 minutes. Shake halfway.</p></div>
+      <div class="card"><div class="icon">🍕</div><h3>Pizza</h3><p><span data-f="350°F" data-c="175°C">350°F</span>, often 4–8 minutes. Check early.</p></div>
+      <div class="card"><div class="icon">🥡</div><h3>Leftovers</h3><p><span data-f="350°F" data-c="175°C">350°F</span>, often 5–10 minutes depending on thickness.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Easy Air Fryer Converter</div>
+    <div><a href="/air-fryer-to-microwave-converter/">Reverse converter</a> · <a href="/air-fryer-cooking-times/">Cooking Times</a></div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

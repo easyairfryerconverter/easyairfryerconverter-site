@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Air fryer to microwave converter for estimating reheating or cooking time when switching appliances. Includes important texture and safety guidance." />
+<meta name="theme-color" content="#f97316" />
+<title>Air Fryer to Microwave Converter | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<span class="eyebrow">↩️ AIR FRYER → MICROWAVE</span>
+<h1>Air Fryer to Microwave Converter</h1>
+<p>Need to use a microwave instead? This tool gives a conservative starting estimate, but remember that microwaves heat food differently and will not create the same crisp texture.</p>
+</div>
+</section>
+
+<section style="padding-top:34px">
+<div class="container hero-grid">
+<div class="converter">
+<h2>Estimate microwave time</h2>
+<div class="field-grid">
+<div><label for="afMinutes">Air fryer time (minutes)</label><input id="afMinutes" type="number" value="10" min="1" /></div>
+<div><label for="reverseFood">Food type</label>
+<select id="reverseFood">
+<option value="leftovers">Leftovers / reheating</option>
+<option value="vegetables">Vegetables</option>
+<option value="pizza">Pizza</option>
+<option value="nuggets">Nuggets / small bites</option>
+<option value="chicken">Chicken</option>
+<option value="fish">Fish / seafood</option>
+<option value="other">Other</option>
+</select></div>
+</div>
+<button class="btn btn-primary convert-btn" id="reverseConvertBtn">Estimate Microwave Time</button>
+<div class="result" id="reverseResult" aria-live="polite"><strong>Suggested starting point</strong><div class="big" id="reverseResultMain"></div><div id="reverseResultNote"></div></div>
+</div>
+
+<div class="card">
+<div class="icon">⚠️</div>
+<h2>Expect a different result</h2>
+<p>Microwave cooking is usually faster, but it does not brown or crisp like an air fryer. For reheating, use short intervals and check frequently.</p>
+<p style="margin-top:14px">For meat and poultry, always verify a safe internal temperature rather than relying on the timer alone.</p>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="container footer-row"><div>© <span id="year"></span> Easy Air Fryer Converter</div><div><a href="/microwave-to-air-fryer-converter/">Microwave → Air Fryer</a> · <a href="/">Home</a></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

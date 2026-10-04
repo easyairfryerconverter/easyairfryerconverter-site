@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Microwave to air fryer conversion chart with practical starting times for common frozen foods, leftovers, pizza, vegetables and more." />
+<meta name="theme-color" content="#f97316" />
+<title>Microwave to Air Fryer Conversion Chart | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<span class="eyebrow">📋 QUICK REFERENCE</span>
+<h1>Microwave to Air Fryer Conversion Chart</h1>
+<p>There is no exact universal conversion, but these starting ranges are more useful than applying a single microwave-to-air-fryer multiplier.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/microwave-to-air-fryer-converter/">Use the interactive converter</a>
+</div>
+</div>
+</section>
+
+<section style="padding-top:34px">
+<div class="container">
+<div class="table-card">
+<table>
+<thead><tr><th>Food</th><th>Air fryer temp</th><th>Typical air fryer time</th><th>Best practice</th></tr></thead>
+<tbody>
+<tr><td>Frozen chicken nuggets</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>6–10 min</td><td>Shake halfway</td></tr>
+<tr><td>Frozen fries</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>12–18 min</td><td>Shake halfway</td></tr>
+<tr><td>Pizza / flatbread</td><td><span data-f="350°F" data-c="175°C">350°F</span></td><td>4–8 min</td><td>Check early</td></tr>
+<tr><td>Leftovers</td><td><span data-f="350°F" data-c="175°C">350°F</span></td><td>5–10 min</td><td>Turn or stir if practical</td></tr>
+<tr><td>Vegetables</td><td><span data-f="375°F" data-c="190°C">375°F</span></td><td>7–12 min</td><td>Shake halfway</td></tr>
+<tr><td>Chicken pieces</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>10–18 min</td><td>Verify safe internal temperature</td></tr>
+<tr><td>Fish / seafood</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>8–14 min</td><td>Check early</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="notice">
+<strong>Important:</strong> package microwave instructions are not a safe direct substitute for air-fryer instructions. Use these ranges as starting points and verify doneness, especially for meat and poultry.
+</div>
+</div>
+</section>
+</main>
+<footer><div class="container footer-row"><div>© <span id="year"></span> Easy Air Fryer Converter</div><div><a href="/">Home</a> · <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

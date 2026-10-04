@@ -164,3 +164,18 @@ footer{padding:34px 0 44px;color:var(--muted);font-size:.9rem}
     max-width:none;
   }
 }
+
+
+.related-links{
+  padding:24px 0 48px;
+}
+.related-links .card{
+  max-width:980px;
+  margin:0 auto;
+}
+.related-links .quick-row{
+  margin-top:14px;
+}
+.related-links .quick-btn{
+  text-decoration:none;
+}

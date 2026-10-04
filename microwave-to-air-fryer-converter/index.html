@@ -71,6 +71,18 @@
           <input id="mwSeconds" type="number" value="0" min="0" max="59" />
         </div>
         <div>
+          <label for="microwaveWatts">Microwave power</label>
+          <select id="microwaveWatts">
+            <option value="unknown">Not sure</option>
+            <option value="700">700W</option>
+            <option value="800">800W</option>
+            <option value="900">900W</option>
+            <option value="1000">1000W</option>
+            <option value="1100">1100W</option>
+            <option value="1200">1200W+</option>
+          </select>
+        </div>
+        <div>
           <label for="foodType">Food type</label>
           <select id="foodType">
             <option value="nuggets">Chicken nuggets / bites</option>
@@ -98,6 +110,16 @@
             <option value="cook">Cook through</option>
             <option value="reheat">Reheat only</option>
           </select>
+        </div>
+      </div>
+
+      <div>
+        <label>Quick microwave times</label>
+        <div class="quick-row">
+          <button type="button" class="quick-btn" data-mw-quick="1">1 min</button>
+          <button type="button" class="quick-btn" data-mw-quick="2">2 min</button>
+          <button type="button" class="quick-btn" data-mw-quick="3">3 min</button>
+          <button type="button" class="quick-btn" data-mw-quick="5">5 min</button>
         </div>
       </div>
 

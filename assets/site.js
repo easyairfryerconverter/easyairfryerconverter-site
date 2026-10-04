@@ -94,11 +94,13 @@ if (convertBtn) {
 
 
 // Microwave -> Air Fryer helper.
-// This is intentionally food-aware rather than a fake one-size-fits-all formula.
+// Food-aware, wattage-aware starting guidance. This intentionally avoids pretending
+// there is an exact one-size-fits-all mathematical conversion.
 const microwaveConvertBtn = document.getElementById("microwaveConvertBtn");
 if (microwaveConvertBtn) {
   const mwMinutes = document.getElementById("mwMinutes");
   const mwSeconds = document.getElementById("mwSeconds");
+  const microwaveWatts = document.getElementById("microwaveWatts");
   const foodType = document.getElementById("foodType");
   const foodState = document.getElementById("foodState");
   const desiredResult = document.getElementById("desiredResult");
@@ -144,16 +146,34 @@ if (microwaveConvertBtn) {
       max = Math.max(min + 1, max - 1);
     }
 
-    // Use microwave time only as a gentle scaling hint, never as a direct formula.
-    const factor = Math.min(1.35, Math.max(0.8, 0.85 + totalMw * 0.05));
-    min = Math.max(2, Math.round(min * factor));
-    max = Math.max(min + 1, Math.round(max * factor));
+    // Use microwave time only as a gentle scaling hint.
+    const timeFactor = Math.min(1.35, Math.max(0.8, 0.85 + totalMw * 0.05));
+    min = Math.max(2, Math.round(min * timeFactor));
+    max = Math.max(min + 1, Math.round(max * timeFactor));
+
+    // Wattage: lower-watt microwave directions often imply a bit more microwave time,
+    // so we slightly avoid over-inflating air-fryer time. Higher-watt directions do the opposite.
+    const watts = microwaveWatts ? microwaveWatts.value : "unknown";
+    const wattFactor = {
+      "700": 0.94,
+      "800": 0.97,
+      "900": 1.00,
+      "1000": 1.03,
+      "1100": 1.05,
+      "1200": 1.07,
+      "unknown": 1.00
+    }[watts] || 1.00;
+
+    min = Math.max(2, Math.round(min * wattFactor));
+    max = Math.max(min + 1, Math.round(max * wattFactor));
 
     const tempText = preferredUnit === "C" ? `${p.c}°C` : `${p.f}°F`;
     mwResult.style.display = "block";
     mwResultMain.textContent = `${tempText} for about ${min}–${max} minutes`;
+
+    const wattNote = watts === "unknown" ? "" : ` Microwave power selected: ${watts}W.`;
     mwResultNote.textContent =
-      `${p.action}. Microwave-to-air-fryer conversion is not exact because the appliances cook differently; use this as a starting range and check food early.`;
+      `${p.action}.${wattNote} Microwave-to-air-fryer conversion is not exact because the appliances cook differently; use this as a starting range and check food early.`;
   });
 }
 
@@ -191,5 +211,100 @@ if (reverseConvertBtn) {
     reverseResultMain.textContent = `Start around ${approx} minutes in the microwave`;
     reverseResultNote.textContent =
       "Microwaves heat rather than crisp, so texture will be different. Use short intervals, stir/turn when possible, and verify safe doneness for meat and poultry.";
+  });
+}
+
+
+
+// Quick-fill buttons for common microwave instruction times.
+document.querySelectorAll("[data-mw-quick]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const mins = document.getElementById("mwMinutes");
+    const secs = document.getElementById("mwSeconds");
+    if (mins) mins.value = btn.dataset.mwQuick;
+    if (secs) secs.value = 0;
+    document.querySelectorAll("[data-mw-quick]").forEach(b => b.classList.remove("active-quick"));
+    btn.classList.add("active-quick");
+  });
+});
+
+
+// Exact Fahrenheit <-> Celsius converter.
+const tempConvertBtn = document.getElementById("tempConvertBtn");
+if (tempConvertBtn) {
+  const tempValue = document.getElementById("tempValue");
+  const tempDirection = document.getElementById("tempDirection");
+  const tempExactResult = document.getElementById("tempExactResult");
+  const tempExactMain = document.getElementById("tempExactMain");
+
+  tempConvertBtn.addEventListener("click", () => {
+    const value = Number(tempValue.value);
+    if (!Number.isFinite(value)) {
+      tempExactResult.style.display = "block";
+      tempExactMain.textContent = "Enter a valid temperature.";
+      return;
+    }
+    let out, label;
+    if (tempDirection.value === "FtoC") {
+      out = (value - 32) * 5 / 9;
+      label = `${Math.round(out)}°C`;
+    } else {
+      out = value * 9 / 5 + 32;
+      label = `${Math.round(out)}°F`;
+    }
+    tempExactResult.style.display = "block";
+    tempExactMain.textContent = label;
+  });
+
+  document.querySelectorAll("[data-temp-preset]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      tempValue.value = btn.dataset.tempPreset;
+      tempDirection.value = "FtoC";
+      tempConvertBtn.click();
+    });
+  });
+}
+
+// Oven -> Microwave starting estimate.
+const ovenMicrowaveBtn = document.getElementById("ovenMicrowaveBtn");
+if (ovenMicrowaveBtn) {
+  const ovenMinutes = document.getElementById("ovenMinutes");
+  const ovenFoodType = document.getElementById("ovenFoodType");
+  const ovenMicrowaveWatts = document.getElementById("ovenMicrowaveWatts");
+  const ovenMwResult = document.getElementById("ovenMwResult");
+  const ovenMwResultMain = document.getElementById("ovenMwResultMain");
+  const ovenMwResultNote = document.getElementById("ovenMwResultNote");
+
+  ovenMicrowaveBtn.addEventListener("click", () => {
+    const mins = Number(ovenMinutes.value || 0);
+    if (mins <= 0) {
+      ovenMwResult.style.display = "block";
+      ovenMwResultMain.textContent = "Enter the oven cooking time.";
+      ovenMwResultNote.textContent = "";
+      return;
+    }
+
+    const foodRatios = {
+      "leftovers": 0.28,
+      "vegetables": 0.30,
+      "potato": 0.34,
+      "chicken": 0.36,
+      "fish": 0.32,
+      "casserole": 0.33,
+      "other": 0.30
+    };
+    const wattAdjust = {
+      "700": 1.18, "800": 1.10, "900": 1.03, "1000": 1.00,
+      "1100": 0.95, "1200": 0.92, "unknown": 1.00
+    };
+
+    const ratio = foodRatios[ovenFoodType.value] || 0.30;
+    const factor = wattAdjust[ovenMicrowaveWatts.value] || 1.00;
+    const approx = Math.max(1, Math.round(mins * ratio * factor * 2) / 2);
+
+    ovenMwResult.style.display = "block";
+    ovenMwResultMain.textContent = `Start around ${approx} minutes in the microwave`;
+    ovenMwResultNote.textContent =
+      "This is only a starting estimate. Microwave in short intervals, stir or rotate when practical, and verify safe doneness for meat and poultry. Texture will differ from oven cooking.";
   });
 }

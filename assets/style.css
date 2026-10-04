@@ -117,3 +117,28 @@ footer{padding:34px 0 44px;color:var(--muted);font-size:.9rem}
 
 .beehiiv-embed{width:100%;min-height:100px;}
 .beehiiv-embed iframe,.beehiiv-embed > div{max-width:100% !important;}
+
+
+.quick-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:10px 0 4px;
+}
+.quick-btn{
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--ink);
+  border-radius:999px;
+  padding:8px 12px;
+  min-height:38px;
+  font:inherit;
+  font-size:.9rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.quick-btn:hover,.quick-btn.active-quick{
+  border-color:var(--orange);
+  color:var(--orange-dark);
+  box-shadow:0 0 0 2px rgba(249,115,22,.08);
+}

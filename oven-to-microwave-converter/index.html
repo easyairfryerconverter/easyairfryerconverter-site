@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Estimate a microwave starting time when you only have oven instructions. Includes microwave wattage and food type guidance." />
+<meta name="theme-color" content="#f97316" />
+<title>Oven to Microwave Converter | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/"><span class="brand-mark">♨</span><span>Easy Air Fryer Converter</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+<div class="container">
+<span class="eyebrow">🔥 OVEN → MICROWAVE</span>
+<h1>Oven to Microwave Converter</h1>
+<p>Need to switch from oven instructions to a microwave? This tool gives a conservative starting estimate based on oven time, food type and microwave wattage.</p>
+</div>
+</section>
+
+<section style="padding-top:34px">
+<div class="container hero-grid">
+<div class="converter">
+<h2>Estimate microwave time</h2>
+<div class="field-grid">
+<div><label for="ovenMinutes">Oven cooking time (minutes)</label><input id="ovenMinutes" type="number" value="20" min="1" /></div>
+<div><label for="ovenFoodType">Food type</label>
+<select id="ovenFoodType">
+<option value="leftovers">Leftovers / reheating</option>
+<option value="vegetables">Vegetables</option>
+<option value="potato">Potatoes</option>
+<option value="chicken">Chicken</option>
+<option value="fish">Fish / seafood</option>
+<option value="casserole">Casserole / baked dish</option>
+<option value="other">Other</option>
+</select></div>
+<div><label for="ovenMicrowaveWatts">Microwave power</label>
+<select id="ovenMicrowaveWatts">
+<option value="unknown">Not sure</option>
+<option value="700">700W</option>
+<option value="800">800W</option>
+<option value="900">900W</option>
+<option value="1000">1000W</option>
+<option value="1100">1100W</option>
+<option value="1200">1200W+</option>
+</select></div>
+</div>
+<button class="btn btn-primary convert-btn" id="ovenMicrowaveBtn">Estimate Microwave Time</button>
+<div class="result" id="ovenMwResult" aria-live="polite"><strong>Suggested starting point</strong><div class="big" id="ovenMwResultMain"></div><div id="ovenMwResultNote"></div></div>
+</div>
+
+<div class="card">
+<div class="icon">⚠️</div>
+<h2>Microwave results will be different</h2>
+<p>A microwave heats food differently from an oven, so this is not a direct mathematical conversion. Texture, browning and crispness will change.</p>
+<p style="margin-top:14px">Use short intervals and verify safe doneness for meat and poultry.</p>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="container footer-row"><div>© <span id="year"></span> Easy Air Fryer Converter</div><div><a href="/microwave-to-air-fryer-converter/">Microwave → Air Fryer</a> · <a href="/">Home</a></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

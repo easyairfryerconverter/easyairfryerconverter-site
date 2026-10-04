@@ -1,18 +1,836 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Easy Air Fryer Converter</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Convert oven temperatures and cooking times to air fryer settings in seconds. Easy Air Fryer Converter also offers cooking guides, recipes, tips, and free printable resources."
+  />
+  <meta name="theme-color" content="#f97316" />
+
+  <title>
+    Easy Air Fryer Converter | Oven to Air Fryer Time & Temperature
+  </title>
+
+  <style>
+    :root {
+      --orange: #f97316;
+      --orange-dark: #c2410c;
+      --cream: #fffaf3;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --line: #eadfd2;
+      --shadow: 0 14px 34px rgba(78, 46, 18, 0.1);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 250, 243, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(234, 223, 210, 0.85);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--orange);
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange-dark);
+    }
+
+    .hero {
+      padding: 72px 0 46px;
+      background:
+        radial-gradient(
+          circle at 88% 15%,
+          rgba(249, 115, 22, 0.15),
+          transparent 27%
+        ),
+        linear-gradient(180deg, #fffaf3 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffedd5;
+      color: #9a3412;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.83rem;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 5.5vw, 4.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin: 18px 0 20px;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: #4b5563;
+      max-width: 670px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .mini-note {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-top: 13px;
+    }
+
+    .converter {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .converter h2 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+    }
+
+    .converter .sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #d6d3d1;
+      border-radius: 11px;
+      font: inherit;
+      background: white;
+      color: var(--ink);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+    }
+
+    .convert-btn {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      display: none;
+    }
+
+    .result strong {
+      color: #9a3412;
+    }
+
+    .result .big {
+      font-size: 1.38rem;
+      font-weight: 900;
+      color: #7c2d12;
+      margin: 4px 0;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+      color: #57534e;
+      font-size: 0.85rem;
+    }
+
+    .trust-row span {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(79, 53, 29, 0.05);
+      transition: 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      margin-bottom: 9px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .coming {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--orange-dark);
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .how {
+      background: white;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #ffedd5;
+      color: #9a3412;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .freebie {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+      background: #1f2937;
+      color: white;
+      border-radius: 28px;
+      padding: 38px;
+    }
+
+    .freebie h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+
+    .freebie p {
+      color: #d1d5db;
+    }
+
+    .signup {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      color: var(--ink);
+    }
+
+    .signup form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .signup input {
+      flex: 1;
+    }
+
+    .signup small {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 34px 0 44px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .freebie {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .field-grid,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .signup form {
+        flex-direction: column;
+      }
+
+      .freebie {
+        padding: 26px;
+      }
+
+      h1 {
+        font-size: 2.55rem;
+      }
+
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#">
+          <span class="brand-mark">♨</span>
+          <span>Easy Air Fryer Converter</span>
+        </a>
 
-  <h1>Easy Air Fryer Converter</h1>
+        <div class="nav-links">
+          <a href="#converter">Converter</a>
+          <a href="#explore">Cooking Guides</a>
+          <a href="#recipes">Recipes</a>
+          <a href="#freebie">Free Cheat Sheet</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <p>
-    Easy Air Fryer Converter 2.0 is coming soon.
-  </p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            🔥 Simple conversions. Better air fryer results.
+          </span>
 
+          <h1>Turn oven recipes into air fryer recipes in seconds.</h1>
+
+          <p>
+            Enter your oven temperature and cooking time, and get a quick air
+            fryer starting point. No guessing, no complicated charts.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#converter">
+              Use the converter
+            </a>
+
+            <a class="btn btn-secondary" href="#explore">
+              Explore cooking guides
+            </a>
+          </div>
+
+          <p class="mini-note">
+            A practical starting point for everyday cooking. Always check food
+            for safe doneness.
+          </p>
+
+          <div class="trust-row">
+            <span>⚡ Fast</span>
+            <span>📱 Mobile friendly</span>
+            <span>🍗 Built for everyday cooks</span>
+          </div>
+        </div>
+
+        <div class="converter" id="converter">
+          <h2>Oven → Air Fryer Converter</h2>
+
+          <div class="sub">
+            A quick rule-of-thumb conversion for temperature and time.
+          </div>
+
+          <div class="field-grid">
+            <div>
+              <label for="temp">Oven temperature</label>
+              <input
+                id="temp"
+                type="number"
+                inputmode="decimal"
+                value="400"
+                min="1"
+              />
+            </div>
+
+            <div>
+              <label for="unit">Temperature unit</label>
+              <select id="unit">
+                <option value="F">°F</option>
+                <option value="C">°C</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="minutes">Oven cooking time</label>
+              <input
+                id="minutes"
+                type="number"
+                inputmode="decimal"
+                value="30"
+                min="1"
+              />
+            </div>
+
+            <div>
+              <label for="rounding">Round result</label>
+              <select id="rounding">
+                <option value="5">Nearest 5 degrees</option>
+                <option value="1">Exact degree</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            class="btn btn-primary convert-btn"
+            id="convertBtn"
+          >
+            Convert to air fryer
+          </button>
+
+          <div class="result" id="result" aria-live="polite">
+            <strong>Suggested starting point</strong>
+            <div class="big" id="resultMain"></div>
+            <div id="resultNote"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything you need to air fry with confidence</h2>
+
+          <p>
+            We’re building practical guides that answer the questions people
+            actually have while standing in the kitchen.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <a class="card" href="#converter">
+            <div class="icon">🧮</div>
+            <h3>Conversion Tools</h3>
+
+            <p>
+              Oven-to-air-fryer time and temperature conversions, plus more
+              tools coming soon.
+            </p>
+
+            <span class="coming">Use now →</span>
+          </a>
+
+          <div class="card">
+            <div class="icon">⏱️</div>
+            <h3>Cooking Times</h3>
+
+            <p>
+              Quick guides for chicken, vegetables, frozen foods, seafood, and
+              more.
+            </p>
+
+            <span class="coming">Coming next</span>
+          </div>
+
+          <div class="card" id="recipes">
+            <div class="icon">🍽️</div>
+            <h3>Easy Recipes</h3>
+
+            <p>
+              Simple air fryer recipes designed for busy cooks and beginners.
+            </p>
+
+            <span class="coming">Coming next</span>
+          </div>
+
+          <div class="card">
+            <div class="icon">💡</div>
+            <h3>Beginner Guides</h3>
+
+            <p>
+              Learn preheating, basket space, flipping, reheating, cleanup, and
+              more.
+            </p>
+
+            <span class="coming">Coming next</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How the converter works</h2>
+
+          <p>
+            We use a common starting rule for adapting conventional oven recipes
+            to an air fryer.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="card">
+            <div class="step-num">1</div>
+
+            <h3>Enter the oven recipe</h3>
+
+            <p>
+              Add the original oven temperature and cooking time.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">2</div>
+
+            <h3>We adjust both</h3>
+
+            <p>
+              The calculator lowers the temperature and shortens the cooking
+              time.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">3</div>
+
+            <h3>Check food early</h3>
+
+            <p>
+              Air fryers vary, so use the result as a starting point and check
+              doneness before the suggested finish time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="freebie">
+      <div class="container">
+        <div class="freebie">
+          <div>
+            <span class="eyebrow">
+              FREE RESOURCE — COMING SOON
+            </span>
+
+            <h2>Air Fryer Cooking Time Cheat Sheet</h2>
+
+            <p>
+              A simple printable reference for popular foods, temperatures, and
+              approximate cooking times. We’ll connect the email delivery after
+              the site foundation is complete.
+            </p>
+          </div>
+
+          <div class="signup">
+            <strong>
+              Want the cheat sheet when it launches?
+            </strong>
+
+            <p style="color: #6b7280; margin-top: 6px">
+              Email signup is being prepared.
+            </p>
+
+            <form
+              onsubmit="
+                event.preventDefault();
+                document.getElementById('signupMsg').textContent =
+                  'Thanks! Signup will be activated soon.';
+              "
+            >
+              <input
+                type="email"
+                placeholder="you@example.com"
+                aria-label="Email address"
+                required
+              />
+
+              <button
+                class="btn btn-primary"
+                type="submit"
+              >
+                Notify me
+              </button>
+            </form>
+
+            <small id="signupMsg">
+              No spam. This form is a preview until email delivery is connected.
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        © <span id="year"></span> Easy Air Fryer Converter
+      </div>
+
+      <div>
+        Made to make air fryer cooking easier.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const temp = document.getElementById("temp");
+    const unit = document.getElementById("unit");
+    const minutes = document.getElementById("minutes");
+    const rounding = document.getElementById("rounding");
+
+    const result = document.getElementById("result");
+    const resultMain = document.getElementById("resultMain");
+    const resultNote = document.getElementById("resultNote");
+
+    function roundTo(value, step) {
+      return Math.round(value / step) * step;
+    }
+
+    function convert() {
+      const t = Number(temp.value);
+      const m = Number(minutes.value);
+      const r = Number(rounding.value);
+
+      if (!t || !m || t <= 0 || m <= 0) {
+        result.style.display = "block";
+        resultMain.textContent = "Please enter valid numbers.";
+        resultNote.textContent = "";
+        return;
+      }
+
+      let airTemp;
+
+      if (unit.value === "F") {
+        airTemp = t - 25;
+      } else {
+        airTemp = t - 15;
+      }
+
+      airTemp = roundTo(airTemp, r);
+
+      const airMinutes = Math.max(
+        1,
+        Math.round(m * 0.8)
+      );
+
+      const checkAt = Math.max(
+        1,
+        Math.round(airMinutes * 0.8)
+      );
+
+      resultMain.textContent =
+        airTemp +
+        "°" +
+        unit.value +
+        " for about " +
+        airMinutes +
+        " minutes";
+
+      resultNote.textContent =
+        "Start checking around " +
+        checkAt +
+        " minutes. Exact results vary by food, quantity, and air fryer model.";
+
+      result.style.display = "block";
+    }
+
+    document
+      .getElementById("convertBtn")
+      .addEventListener("click", convert);
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>

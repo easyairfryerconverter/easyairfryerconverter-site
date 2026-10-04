@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Microwave-to-air-fryer examples for pizza, fries, nuggets, leftovers, baked potatoes and vegetables." />
+<meta name="theme-color" content="#f97316" />
+<meta property="og:title" content="Microwave to Air Fryer Food Guides" />
+<meta property="og:description" content="Microwave-to-air-fryer examples for pizza, fries, nuggets, leftovers, baked potatoes and vegetables." />
+<meta property="og:type" content="article" />
+<title>Microwave to Air Fryer Food Guides | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/recipes/">Recipes</a>
+          <a href="/guides/">Guides</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/recipes/">Recipes</a>
+    <a href="/guides/">Guides</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">⚡ MICROWAVE → AIR FRYER</span>
+    <h1>Microwave to Air Fryer Food Guides</h1>
+    <p>Practical examples for foods people actually switch between the microwave and air fryer. Use these as starting points, then adjust for your air fryer, portion size and desired crispness.</p>
+  </div>
+</section>
+<section style="padding-top:34px">
+  <div class="container">
+    <div class="grid-4">
+      <a class="card" href="/microwave-to-air-fryer-guides/microwave-pizza-to-air-fryer/">
+      <div class="icon">🍕</div>
+      <h3>Microwave Pizza to Air Fryer</h3>
+      <p>A practical guide for switching reheated pizza from the microwave to the air fryer for a crisper crust.</p>
+      <span class="coming">View guide →</span>
+    </a>
+<a class="card" href="/microwave-to-air-fryer-guides/microwave-fries-to-air-fryer/">
+      <div class="icon">🍟</div>
+      <h3>Microwave Fries to Air Fryer</h3>
+      <p>How to use the air fryer when microwave fries turn soft and you want a crisp finish.</p>
+      <span class="coming">View guide →</span>
+    </a>
+<a class="card" href="/microwave-to-air-fryer-guides/microwave-nuggets-to-air-fryer/">
+      <div class="icon">🍗</div>
+      <h3>Microwave Nuggets to Air Fryer</h3>
+      <p>A quick way to finish chicken nuggets in the air fryer after microwave heating.</p>
+      <span class="coming">View guide →</span>
+    </a>
+<a class="card" href="/microwave-to-air-fryer-guides/microwave-leftovers-to-air-fryer/">
+      <div class="icon">♻️</div>
+      <h3>Microwave Leftovers to Air Fryer</h3>
+      <p>A general method for moving leftovers from the microwave to the air fryer when you want a better texture.</p>
+      <span class="coming">View guide →</span>
+    </a>
+<a class="card" href="/microwave-to-air-fryer-guides/microwave-baked-potato-to-air-fryer/">
+      <div class="icon">🥔</div>
+      <h3>Microwave Baked Potato to Air Fryer</h3>
+      <p>Use the microwave for speed, then finish the potato in the air fryer for a crisper skin.</p>
+      <span class="coming">View guide →</span>
+    </a>
+<a class="card" href="/microwave-to-air-fryer-guides/microwave-vegetables-to-air-fryer/">
+      <div class="icon">🥦</div>
+      <h3>Microwave Vegetables to Air Fryer</h3>
+      <p>A simple way to finish microwaved vegetables in the air fryer for more browning and texture.</p>
+      <span class="coming">View guide →</span>
+    </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Easy Air Fryer Converter</div>
+    <div><a href="/recipes/">Recipes</a> · <a href="/guides/">Guides</a> · <a href="/air-fryer-cooking-times/">Cooking Times</a></div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

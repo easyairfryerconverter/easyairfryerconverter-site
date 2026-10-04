@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Simple air fryer recipes with Fahrenheit and Celsius temperatures, practical cooking times, and beginner-friendly instructions." />
+<meta name="theme-color" content="#f97316" />
+<meta property="og:title" content="Easy Air Fryer Recipes" />
+<meta property="og:description" content="Simple air fryer recipes with Fahrenheit and Celsius temperatures, practical cooking times, and beginner-friendly instructions." />
+<meta property="og:type" content="website" />
+<title>Easy Air Fryer Recipes | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Oven Converter</a>
+          <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/recipes/">Recipes</a>
+          <a href="/guides/">Guides</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Oven Converter</a>
+    <a href="/microwave-to-air-fryer-converter/">Microwave Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/recipes/">Recipes</a>
+    <a href="/guides/">Guides</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+<div class="container">
+<span class="eyebrow">🍽️ EASY RECIPES</span>
+<h1>Easy Air Fryer Recipes</h1>
+<p>Simple recipes built around the foods people cook most often. Each one includes Fahrenheit and Celsius temperatures and a practical starting time.</p>
+</div>
+</section>
+<section style="padding-top:34px">
+<div class="container">
+<div class="grid-4">
+<a class="card" href="/recipes/air-fryer-chicken-wings/">
+      <div class="icon">🍗</div>
+      <h3>Easy Air Fryer Chicken Wings</h3>
+      <p><span data-f="360°F" data-c="180°C">360°F</span> · 18–22 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+<a class="card" href="/recipes/air-fryer-chicken-breast/">
+      <div class="icon">🍗</div>
+      <h3>Juicy Air Fryer Chicken Breast</h3>
+      <p><span data-f="360°F" data-c="180°C">360°F</span> · 10–15 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+<a class="card" href="/recipes/air-fryer-frozen-fries/">
+      <div class="icon">🍟</div>
+      <h3>Crispy Air Fryer Frozen Fries</h3>
+      <p><span data-f="390°F" data-c="200°C">390°F</span> · 12–18 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+<a class="card" href="/recipes/air-fryer-salmon/">
+      <div class="icon">🐟</div>
+      <h3>Easy Air Fryer Salmon</h3>
+      <p><span data-f="360°F" data-c="180°C">360°F</span> · 10–15 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+<a class="card" href="/recipes/air-fryer-broccoli/">
+      <div class="icon">🥦</div>
+      <h3>Air Fryer Broccoli</h3>
+      <p><span data-f="375°F" data-c="190°C">375°F</span> · 8–12 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+<a class="card" href="/recipes/air-fryer-potato-wedges/">
+      <div class="icon">🥔</div>
+      <h3>Crispy Air Fryer Potato Wedges</h3>
+      <p><span data-f="360°F" data-c="180°C">360°F</span> · 18–22 minutes</p>
+      <span class="coming">View recipe →</span>
+    </a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Easy Air Fryer Converter</div>
+    <div><a href="/recipes/">Recipes</a> · <a href="/guides/">Guides</a> · <a href="/air-fryer-cooking-times/">Cooking Times</a></div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

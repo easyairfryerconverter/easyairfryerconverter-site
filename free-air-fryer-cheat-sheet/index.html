@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Download a free printable air fryer cooking time cheat sheet with Fahrenheit and Celsius temperatures for chicken, frozen foods, vegetables, meat and seafood." />
+<meta name="theme-color" content="#f97316" />
+<meta property="og:title" content="Free Air Fryer Cooking Time Cheat Sheet" />
+<meta property="og:description" content="A free printable air fryer time and temperature chart in Fahrenheit and Celsius." />
+<meta property="og:type" content="website" />
+<title>Free Air Fryer Cooking Time Cheat Sheet | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/#recipes">Recipes</a>
+          <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/#recipes">Recipes</a>
+    <a href="/free-air-fryer-cheat-sheet/">Free Cheat Sheet</a>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">🧾 FREE PRINTABLE</span>
+    <h1>Keep your most-used air fryer cooking times in one place.</h1>
+    <p>Download our one-page Air Fryer Cooking Time Cheat Sheet with Fahrenheit and Celsius temperatures for chicken, frozen foods, vegetables, meat and seafood.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/downloads/air-fryer-cooking-time-cheat-sheet.pdf" download>Download the free PDF</a>
+      <a class="btn btn-secondary" href="/air-fryer-cooking-times/">View the full online chart</a>
+    </div>
+    <p class="mini-note">Free to save and print for personal kitchen use.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="card">
+        <div class="icon">✅</div>
+        <h2>What’s inside</h2>
+        <p>Quick time and temperature starting points for popular air fryer foods, with both °F and °C shown side by side.</p>
+        <div class="trust-row">
+          <span>🍗 Chicken</span>
+          <span>❄️ Frozen foods</span>
+          <span>🥦 Vegetables</span>
+          <span>🥩 Meat</span>
+          <span>🐟 Seafood</span>
+        </div>
+      </div>
+
+      <div class="signup">
+        <strong>Want new air fryer guides by email?</strong>
+        <p style="color:#6b7280">We’re connecting the free email list next. For now, you can download the cheat sheet immediately.</p>
+        <form onsubmit="event.preventDefault();document.getElementById('signupMsg').textContent='Email signup is being connected next. Your PDF is available with the download button above.';">
+          <input type="email" placeholder="you@example.com" aria-label="Email address" required />
+          <button class="btn btn-primary" type="submit">Keep me posted</button>
+        </form>
+        <small id="signupMsg">No spam. Email collection is not active yet.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <div class="section-head">
+      <h2>Use the chart as a starting point</h2>
+      <p>Air fryer models, food thickness, quantity and starting temperature can change cooking time.</p>
+    </div>
+    <div class="steps">
+      <div class="card"><div class="step-num">1</div><h3>Start with the chart</h3><p>Choose the temperature and time range for your food.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>Check early</h3><p>Look at the food before the end of the suggested range.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>Confirm safe doneness</h3><p>Use a food thermometer for meat and poultry rather than relying only on time.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Easy Air Fryer Converter</div>
+    <div><a href="/">Home</a> · <a href="/air-fryer-cooking-times/">Cooking Times</a></div>
+  </div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

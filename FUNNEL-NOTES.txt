@@ -1,0 +1,16 @@
+Easy Air Fryer Converter funnel plan
+
+Public landing page:
+  /free-air-fryer-cheat-sheet/
+
+Post-signup thank-you/download page:
+  /thank-you/
+
+Download:
+  /downloads/air-fryer-cooking-time-cheat-sheet.pdf
+
+IMPORTANT:
+- /thank-you/ contains noindex,nofollow meta tags so search engines should not index it.
+- Once beehiiv is restored, configure the subscribe form's success redirect to /thank-you/.
+- Keep the welcome email's PDF button as a backup so subscribers can still access the freebie later.
+- Future paid products should use a real checkout/delivery system; do not rely on a hidden static URL for paid files.

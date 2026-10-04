@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Air fryer cooking time chart for chicken, frozen foods, meat, vegetables and seafood. Quick temperature and time starting points with Fahrenheit and Celsius support." />
+<meta name="theme-color" content="#f97316" />
+<title>Air Fryer Cooking Time Chart | Easy Air Fryer Converter</title>
+<link rel="stylesheet" href="/assets/style.css" />
+<script>
+(function(){
+  const saved=localStorage.getItem("theme");
+  const dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme=saved||(dark?"dark":"light");
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <span class="brand-mark">♨</span>
+        <span>Easy Air Fryer Converter</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/#converter">Converter</a>
+          <a href="/air-fryer-cooking-times/">Cooking Times</a>
+          <a href="/#recipes">Recipes</a>
+          <a href="/#freebie">Free Cheat Sheet</a>
+        </div>
+        <button class="toggle-btn" id="unitToggle" aria-label="Switch temperature unit">°F</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#converter">Converter</a>
+    <a href="/air-fryer-cooking-times/">Cooking Times</a>
+    <a href="/#recipes">Recipes</a>
+    <a href="/#freebie">Free Cheat Sheet</a>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">⏱️ QUICK REFERENCE GUIDE</span>
+    <h1>Air Fryer Cooking Time Chart</h1>
+    <p>Choose °F or °C from the header. Your preference is remembered across the site.</p>
+    <div class="notice"><strong>Food safety matters:</strong> use a food thermometer for meat and poultry. Poultry should reach <span data-f="165°F" data-c="74°C">165°F</span>; ground meats <span data-f="160°F" data-c="71°C">160°F</span>; whole cuts of beef and pork <span data-f="145°F" data-c="63°C">145°F</span> with a 3-minute rest.</div>
+  </div>
+</section>
+
+<section style="padding-top:34px">
+<div class="container content-grid">
+<aside class="toc">
+<strong>Jump to</strong>
+<a href="#chicken">Chicken</a><a href="#frozen">Frozen foods</a><a href="#meat">Meat</a><a href="#seafood">Seafood</a><a href="#vegetables">Vegetables</a><a href="#tips">Best results</a>
+</aside>
+<div>
+<div class="table-card" id="chicken"><h2>Chicken</h2><table><thead><tr><th>Food</th><th>Temperature</th><th>Approx. time</th><th>Turn / shake</th><th>Doneness</th></tr></thead><tbody>
+<tr><td>Chicken wings</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>18–22 min</td><td>Turn halfway</td><td><span class="badge" data-f="165°F internal" data-c="74°C internal">165°F internal</span></td></tr>
+<tr><td>Chicken breast</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>10–15 min</td><td>Turn halfway</td><td><span class="badge" data-f="165°F internal" data-c="74°C internal">165°F internal</span></td></tr>
+<tr><td>Drumsticks</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>18–25 min</td><td>Turn halfway</td><td><span class="badge" data-f="165°F internal" data-c="74°C internal">165°F internal</span></td></tr>
+<tr><td>Chicken nuggets, frozen</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>6–10 min</td><td>Shake halfway</td><td>Follow package if different</td></tr>
+</tbody></table></div>
+
+<div class="table-card" id="frozen"><h2>Frozen foods</h2><table><thead><tr><th>Food</th><th>Temperature</th><th>Approx. time</th><th>Turn / shake</th><th>Tip</th></tr></thead><tbody>
+<tr><td>Thin frozen fries</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>12–16 min</td><td>Shake halfway</td><td>Cook in an even layer when possible</td></tr>
+<tr><td>Thick frozen fries</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>12–20 min</td><td>Shake halfway</td><td>Add time for a fuller basket</td></tr>
+<tr><td>Fish sticks</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>6–10 min</td><td>Turn if needed</td><td>Cook until crisp and hot throughout</td></tr>
+<tr><td>Mozzarella sticks</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>8–10 min</td><td>Shake gently</td><td>Check early to prevent bursting</td></tr>
+</tbody></table></div>
+
+<div class="table-card" id="meat"><h2>Meat</h2><table><thead><tr><th>Food</th><th>Temperature</th><th>Approx. time</th><th>Turn / shake</th><th>Doneness</th></tr></thead><tbody>
+<tr><td>Steak</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>8–12 min</td><td>Turn halfway</td><td><span class="badge" data-f="145°F minimum + rest" data-c="63°C minimum + rest">145°F minimum + rest</span></td></tr>
+<tr><td>Pork chops</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>10–14 min</td><td>Turn halfway</td><td><span class="badge" data-f="145°F minimum + rest" data-c="63°C minimum + rest">145°F minimum + rest</span></td></tr>
+<tr><td>Hamburger patties</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>7–14 min</td><td>Turn halfway</td><td><span class="badge" data-f="160°F internal" data-c="71°C internal">160°F internal</span></td></tr>
+</tbody></table></div>
+
+<div class="table-card" id="seafood"><h2>Seafood</h2><table><thead><tr><th>Food</th><th>Temperature</th><th>Approx. time</th><th>Turn / shake</th><th>Tip</th></tr></thead><tbody>
+<tr><td>Salmon fillet</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>10–15 min</td><td>Usually no turn needed</td><td>Thickness changes timing significantly</td></tr>
+<tr><td>White fish fillet</td><td><span data-f="360–390°F" data-c="180–200°C">360–390°F</span></td><td>8–15 min</td><td>Turn if thick</td><td>Cook until opaque and flaky</td></tr>
+<tr><td>Shrimp</td><td><span data-f="390°F" data-c="200°C">390°F</span></td><td>6–9 min</td><td>Shake once</td><td>Stop when pink and opaque</td></tr>
+</tbody></table></div>
+
+<div class="table-card" id="vegetables"><h2>Vegetables & potatoes</h2><table><thead><tr><th>Food</th><th>Temperature</th><th>Approx. time</th><th>Turn / shake</th><th>Tip</th></tr></thead><tbody>
+<tr><td>Potato wedges</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>18–22 min</td><td>Shake halfway</td><td>Dry well before cooking</td></tr>
+<tr><td>Potato cubes</td><td><span data-f="360°F" data-c="180°C">360°F</span></td><td>12–18 min</td><td>Shake halfway</td><td>Keep pieces similar in size</td></tr>
+<tr><td>Broccoli florets</td><td><span data-f="375°F" data-c="190°C">375°F</span></td><td>8–12 min</td><td>Shake halfway</td><td>A light coating of oil helps browning</td></tr>
+<tr><td>Brussels sprouts</td><td><span data-f="375°F" data-c="190°C">375°F</span></td><td>12–16 min</td><td>Shake halfway</td><td>Halve large sprouts</td></tr>
+</tbody></table></div>
+
+<div class="table-card" id="tips"><h2>5 tips for better air fryer results</h2>
+<p><strong>1. Check early.</strong> Air fryers cook differently. Start checking several minutes before the end of a range.</p>
+<p><strong>2. Leave room for airflow.</strong> Crowding can slow cooking and reduce crispness.</p>
+<p><strong>3. Shake or turn when useful.</strong> Fries, nuggets and many vegetables benefit from movement halfway through.</p>
+<p><strong>4. Use a thermometer for meat.</strong> Time alone cannot confirm safe doneness.</p>
+<p><strong>5. Treat this as a starting chart.</strong> Thickness, quantity, starting temperature and air fryer model all matter.</p>
+</div>
+
+<div class="freebie"><div><span class="eyebrow">FREE PRINTABLE — NEXT</span><h2>Want this chart as a printable cheat sheet?</h2><p>We’re turning this page into a one-page kitchen reference you can save or print.</p></div><div class="signup"><strong>Coming soon</strong><p style="color:#6b7280">The downloadable version and email delivery will be connected after the site foundation is complete.</p><a class="btn btn-primary" href="/">Try the converter</a></div></div>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="container footer-row"><div>© <span id="year"></span> Easy Air Fryer Converter</div><div><a href="/">Home</a> · <a href="/air-fryer-cooking-times/">Cooking Times</a></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

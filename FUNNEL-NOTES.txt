@@ -14,3 +14,9 @@ IMPORTANT:
 - Once beehiiv is restored, configure the subscribe form's success redirect to /thank-you/.
 - Keep the welcome email's PDF button as a backup so subscribers can still access the freebie later.
 - Future paid products should use a real checkout/delivery system; do not rely on a hidden static URL for paid files.
+
+
+v16: Form redirects to /thank-you/; short thank-you directly links to PDF + public /resources/ library.
+Beehiiv action: enable 'Remove emails from the redirect URL' for privacy.
+Public /resources/ page links free printable to the opt-in landing page; premium offers are only marked planned.
+When selling downloads, use real payment and access controls, not merely hidden static links.

@@ -20,3 +20,8 @@ v16: Form redirects to /thank-you/; short thank-you directly links to PDF + publ
 Beehiiv action: enable 'Remove emails from the redirect URL' for privacy.
 Public /resources/ page links free printable to the opt-in landing page; premium offers are only marked planned.
 When selling downloads, use real payment and access controls, not merely hidden static links.
+
+
+v17 FLOW: Landing signup -> Beehiiv success redirect to /thank-you/ (check inbox; no download) -> Beehiiv welcome email button to https://easyairfryerconverter.com/resources/ -> subscriber resource page with direct free PDFs + future paid products.
+CRITICAL MANUAL STEP: Edit Beehiiv welcome email CTA to https://easyairfryerconverter.com/resources/ (replace the old direct PDF CTA). Turn ON remove emails from redirect URL.
+LIMITATION: /resources/ is unlisted and noindex, not access-controlled; direct URL and static PDF URLs can be shared. Real account/email access-gating requires an auth service or secure download backend. Future paid products require real checkout and protected delivery.

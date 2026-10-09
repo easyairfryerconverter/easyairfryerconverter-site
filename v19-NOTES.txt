@@ -1,0 +1,7 @@
+Easy Air Fryer Converter v19
+
+Changes:
+- Added optimized main WebP recipe images and thumbnails for chicken breast, frozen fries, salmon, broccoli, and potato wedges.
+- Added hero photo sections to all five recipe pages.
+- Added og:image metadata and image property in Recipe schema for the five updated recipe pages.
+- Upgraded /recipes/ listing cards so all six recipes now use thumbnails instead of emoji-only cards.

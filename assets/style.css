@@ -200,3 +200,17 @@ footer{padding:34px 0 44px;color:var(--muted);font-size:.9rem}
   margin: -22px -22px 16px; border-radius: var(--radius) var(--radius) 0 0; }
 @media(max-width: 700px) { .recipe-photo-section { padding-top: 0; }
   .recipe-photo img { border-radius: 14px; } }
+
+
+/* v21 FAQ & search-intent sections */
+.faq-section{padding:54px 0 64px}
+.faq-list{max-width:900px;margin:24px auto 0;display:grid;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 54px 18px 20px;font-weight:800;position:relative}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.35rem;color:var(--orange-dark)}
+.faq-item[open] summary::after{content:"–"}
+.faq-item[open] summary{border-bottom:1px solid var(--line)}
+.faq-answer{padding:0 20px 18px}
+.faq-answer p{margin:14px 0 0;color:var(--muted)}
+@media(max-width:700px){.faq-section{padding:40px 0 50px}.faq-item summary{padding:16px 48px 16px 16px}.faq-answer{padding:0 16px 16px}}

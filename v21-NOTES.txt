@@ -1,0 +1,9 @@
+Easy Air Fryer Converter v21
+
+FAQ & Search Intent Expansion
+- Added visible accordion FAQs to the homepage / Oven → Air Fryer converter.
+- Added intent-specific FAQs to Microwave → Air Fryer, Air Fryer → Microwave, and Oven → Microwave converters.
+- Added cooking-time FAQs to the Air Fryer Cooking Time Chart.
+- Added a FAQ jump link to the cooking-time table of contents.
+- FAQs are written for users/search intent; no FAQ rich-result schema was added.
+- Added responsive FAQ styling with native HTML details/summary accordions (no extra JavaScript).

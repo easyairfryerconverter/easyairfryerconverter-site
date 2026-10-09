@@ -1,0 +1,9 @@
+Easy Air Fryer Converter v22
+
+SEO changes:
+- Expanded the existing Microwave to Air Fryer Conversion Chart with 1, 2, 3 and 5 minute reheating examples.
+- Added a dedicated 800W microwave guidance section without pretending there is an exact one-number conversion.
+- Added stronger internal links to food-specific microwave-to-air-fryer guides.
+- Improved chart title/meta description and added WebPage + Breadcrumb structured data.
+- Added accurate recipeCategory and keywords fields to all six Recipe schemas.
+- No fake ratings, nutrition, videos or unsupported cooking-time schema fields were added.

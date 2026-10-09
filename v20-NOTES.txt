@@ -1,0 +1,11 @@
+Easy Air Fryer Converter v20
+
+Recipe SEO & Internal Linking Upgrade
+- Expanded Recipe JSON-LD on all six recipe pages with visible ingredients and step-by-step HowToStep instructions.
+- Added BreadcrumbList schema to all recipe pages and the recipes hub.
+- Added ItemList schema to /recipes/ for the six recipe URLs.
+- Improved recipe title tags and meta descriptions for clearer search intent.
+- Added Open Graph image dimensions and Twitter large-image metadata to recipe pages and hub.
+- Added contextual related-recipe/guide links on every recipe page.
+- Added recipe links from chicken, frozen-food, vegetable, and main cooking-time guides.
+- Updated the stale cooking-time cheat-sheet CTA from “coming soon” to the live freebie funnel.
